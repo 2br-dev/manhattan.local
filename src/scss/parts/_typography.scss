@@ -1,0 +1,32 @@
+@import 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css';
+
+@font-face {
+	font-family: 'Involve';
+	src: url(/fonts/Involve-Regular.ttf);
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Involve';
+	src: url(/fonts/Involve-SemiBold.ttf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Wix';
+	src: url(/fonts/WixMadeforDisplay-ExtraBold.ttf);
+	font-weight: bold;
+}
+
+body{
+
+	font-family: 'Involve', sans-serif;
+	font-size: clamp(16px, 2vw, 18px);
+	line-height: 1.6em;
+
+	& h2{
+		font-family: 'Wix';
+		font-weight: bold;
+		font-size: clamp(24px, 2vw, 60px);
+	}
+}

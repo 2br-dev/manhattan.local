@@ -1,0 +1,52 @@
+header{
+
+	width: 100%;
+	z-index: 200;
+	position: fixed;
+	margin-bottom: -200px;
+	top: 60px;
+	backdrop-filter: blur(0px);
+
+
+	& .container{
+		top: 20px;
+		display: flex;
+		justify-content: space-between;
+
+		& .left-links{
+			display: flex;
+		}
+
+		& .phone{
+			height: auto;
+		}
+
+		& nav{
+
+			& ul{
+				margin: 0;
+				display: flex;
+				height: 100%;
+			}
+		}
+
+		& a{
+			display: flex;
+			align-items: center;
+			color: #fff;
+			padding: 10px 20px;
+			min-height: 100%;
+			transition: background-color .2s;
+
+			&:hover{
+				background: rgba(#fff, .2);
+			}
+		}
+	}
+
+	@media(max-width: 1200px){
+		top: 0;
+		background-color: rgba(black, .8);
+		backdrop-filter: blur(10px);
+	}
+}

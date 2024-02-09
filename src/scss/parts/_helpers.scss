@@ -1,0 +1,91 @@
+body{
+
+	& img{
+		background-color: #efefef;
+		display: block;
+
+		&[src]{
+			background-color: transparent;
+		}
+	}
+
+	& .no-margin{
+		margin: 0;
+	}
+
+	& .mini-scrollbar{
+		border: 1px solid #fff;
+		width: 200px;
+		margin: auto;
+		margin-top: 40px;
+		overflow-x: auto;
+
+		& .mini-scrollbar-content{
+			border: 1px solid #fff;
+		}
+
+		&::-webkit-scrollbar{
+			background: #ccc;
+			height: 12px;
+			border-radius: 6px;
+		}
+
+		&::-webkit-scrollbar-thumb{
+			background: #000;
+			border-radius: 6px;
+		}
+	}
+
+	& .swiper-pagination{
+		
+		margin-top: 40px;
+
+		& .swiper-pagination-bullet{
+			display: inline-block;
+			width: 16px;
+			aspect-ratio: 1 / 1;
+			border-radius: 50%;
+			margin: 0 4px;
+			transition: box-shadow .2s;
+			box-shadow: 0 0 0 1px #ccc inset;
+			cursor: pointer;
+
+			@media(max-width: $medium){
+				width: 14px;
+			}
+
+			&-active{
+				box-shadow: 0 0 0 10px $primary inset;
+			}
+		}
+	}
+
+	& a{
+		color: $primary;
+
+		&.bttn{
+
+			background: $primary;
+			color: #fff;
+			display: inline-block;
+			line-height: 2em;
+			padding: 0 .75em;
+
+			font-size: 21px;
+
+			transition: background-color .2s, color .2s;
+
+			&-outlined{
+				@extend .bttn;
+				background-color: transparent;
+				color: $primary;
+				border: 1px solid $primary;
+
+				&:hover{
+					background-color: $primary;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+[
+	{
+		"img":"/img/team/olesya.jpg",
+		"name": "Олеся Сорокина",
+		"rank": "основатель студии"
+	},
+	{
+		"img":"/img/team/hannah_admin.jpg",
+		"name": "Анна",
+		"rank": "администратор"
+	},
+	{
+		"img":"/img/team/alina.jpg",
+		"name": "Алина",
+		"rank": "мастер"
+	},
+	{
+		"img":"/img/team/hannah_master.jpg",
+		"name": "Анна",
+		"rank": "мастер"
+	},
+	{
+		"img":"/img/team/iren.jpg",
+		"name": "Ирина",
+		"rank": "мастер"
+	},
+	{
+		"img":"/img/team/christine.jpg",
+		"name": "Кристина",
+		"rank": "мастер"
+	},
+	{
+		"img":"/img/team/ksenia.jpg",
+		"name": "Ксения",
+		"rank": "мастер"
+	},
+	{
+		"img":"/img/team/marina.jpg",
+		"name": "Марина",
+		"rank": "мастер"
+	},
+	{
+		"img":"/img/team/shusha.jpg",
+		"name": "Шуша",
+		"rank": "мастер"
+	}
+]

@@ -1,0 +1,53 @@
+<div class="modal" id="price">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3>Прайс-лист Манхеттен</h3>
+			<a href="javascript:void(0)" class="bx bx-x modal-close"></a>
+		</div>
+		<ul class="collapsible">
+			<li class="active">
+				<div class="collapsible-header waves-effect">
+					<span>Парикмахерские услуги</span><i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="collapsible-body">
+					<div class="row flex">
+						@@loop('./price-section.html', './data/price_hair.json')
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header waves-effect">
+					<span>Ногтевой сервис</span><i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="collapsible-body">
+					<div class="row flex">
+						@@loop('./price-section.html', './data/price_nails.json')
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header waves-effect">
+					<span>Оформление бровей и ресниц</span><i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="collapsible-body">
+					<div class="row flex">
+						@@loop('./price-section.html', './data/price_eyes.json')
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header waves-effect">
+					<span>Перманентный макияж</span><i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="collapsible-body">
+					<div class="row flex">
+						@@loop('./price-section.html', './data/price_permanent.json')
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="center-align">
+			<a href="https://wa.me/+79883499977" target="_blank" rel="nofollow" class="bttn">Записаться</a>
+		</div>
+	</div>
+</div>

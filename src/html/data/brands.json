@@ -1,0 +1,42 @@
+[
+	{
+		"name": "Braé",
+		"img": "/img/brands/braé.svg",
+		"url": "https://braehaircare.ru/shop/"
+	},
+	{
+		"name": "Evo",
+		"img": "/img/brands/evo.svg",
+		"url": "https://www.evohair.com/us/"
+	},
+	{
+		"name": "K18",
+		"img": "/img/brands/k18.svg",
+		"url": "https://k18.hair/"
+	},
+	{
+		"name": "Wella",
+		"img": "/img/brands/wella.svg",
+		"url": "https://wellashop.ru/"
+	},
+	{
+		"name": "Kevin Murphy",
+		"img": "/img/brands/km.svg",
+		"url": "https://murphykevin.ru/"
+	},
+	{
+		"name": "Gehwol",
+		"img": "/img/brands/gehwol.svg",
+		"url": "https://gehwol.net/"
+	},
+	{
+		"name": "L'oréal professional system",
+		"img": "/img/brands/l'oréal.svg",
+		"url": "https://lorealprofessionnel.ru/"
+	},
+	{
+		"name": "System professional",
+		"img": "/img/brands/sp.svg",
+		"url": "https://wellashop.ru/system-professional/"
+	}
+]
