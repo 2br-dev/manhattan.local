@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css';
 
 .materialize-red {
@@ -2574,7 +2576,7 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*, *:before, body:after, *:after {
     box-sizing: inherit;
 }
 
@@ -2767,7 +2769,7 @@ video.responsive-video {
     font-size: 24px;
 }
 
-.breadcrumb:before {
+.breadcrumb:before, body.breadcrumb:after {
     content: '\E5CC';
     color: rgba(255, 255, 255, 0.7);
     vertical-align: top;
@@ -2780,7 +2782,7 @@ video.responsive-video {
     -webkit-font-smoothing: antialiased;
 }
 
-.breadcrumb:first-child:before {
+.breadcrumb:first-child:before, body.breadcrumb:first-child:after {
     display: none;
 }
 
@@ -3193,7 +3195,7 @@ td, th {
     background-color: #26a69a;
 }
 
-.progress .indeterminate:before {
+.progress .indeterminate:before, .progress body.indeterminate:after {
     content: '';
     position: absolute;
     background-color: inherit;
@@ -6553,6 +6555,28 @@ body h2 {
     font-size: clamp(24px, 2vw, 60px);
 }
 
+body {
+    position: relative;
+}
+
+body:before, body:after {
+    content: '';
+    display: block;
+    width: 25vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-100%);
+    border-left: 1px solid #efefef;
+    z-index: -1;
+}
+
+body:after {
+    transform: none;
+    border-right: 1px solid #efefef;
+}
+
 body img {
     background-color: #efefef;
     display: block;
@@ -6811,6 +6835,29 @@ section#hero .social-buttons a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+section#services {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+    section#services:before {
+        content: 'Наши услуги';
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+        display: block;
+        position: absolute;
+        font-family: 'Wix';
+        font-size: clamp(60px, 13vw, 120px);
+        white-space: nowrap;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        color: #EDEDED;
+        line-height: 1em;
+        z-index: -1;
+    }
+}
+
 section#services .service-list {
     font-size: clamp(16px, 2vw, 20px);
     font-weight: bold;
@@ -6821,7 +6868,7 @@ section#services .left-image-wrapper, section#services .right-image-wrapper {
     position: relative;
 }
 
-section#services .left-image-wrapper:before, section#services .right-image-wrapper:before {
+section#services .left-image-wrapper:before, section#services body.left-image-wrapper:after, section#services body.right-image-wrapper:after, section#services .right-image-wrapper:before {
     content: '';
     position: absolute;
     width: 100%;
@@ -6861,14 +6908,14 @@ section#services .left-image-wrapper:not(:last-of-type), section#services .right
     }
 }
 
-section#services .right-image-wrapper:before {
+section#services .right-image-wrapper:before, section#services body.right-image-wrapper:after {
     left: unset;
     right: -40px;
     text-align: right;
 }
 
 @media (max-width: 600px) {
-    section#services .right-image-wrapper:before {
+    section#services .right-image-wrapper:before, section#services body.right-image-wrapper:after {
         text-align: left;
         right: unset;
         left: -40px;
@@ -7043,6 +7090,150 @@ section#folio .collapsible .collapsible-body {
 
 section#folio .collapsible .active .collapsible-header i {
     transform: rotate(90deg);
+}
+
+@media (min-width: 800px) {
+    section#folio {
+        overflow: hidden;
+        position: relative;
+        padding-bottom: clamp(180px, 20vw, 315px);
+    }
+
+    section#folio:before {
+        content: 'Наши работы';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-45%) translateY(-20%);
+        font-size: clamp(180px, 20vw, 315px);
+        line-height: 1em;
+        color: #EDEDED;
+        font-weight: 800;
+        white-space: nowrap;
+        font-family: 'Wix';
+    }
+}
+
+section#atmosphere {
+    padding-bottom: 0;
+    padding-top: 35%;
+    min-height: 600px;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    transition: background-image .4s;
+}
+
+@media (max-width: 600px) {
+    section#atmosphere {
+        background: none !important;
+    }
+}
+
+@media (min-width: 600px) {
+    section#atmosphere h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        margin: 0;
+        line-height: 1.5em;
+        padding: 2vmax 0;
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    }
+}
+
+@media (max-width: 600px) {
+    section#atmosphere {
+        padding-top: 0;
+        min-height: unset;
+    }
+}
+
+section#atmosphere .atmosphere-thumbs-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    section#atmosphere .atmosphere-thumbs-wrapper {
+        position: relative;
+    }
+}
+
+@media (max-width: 600px) {
+    section#atmosphere .container {
+        width: 100%;
+    }
+}
+
+section#atmosphere .row {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    section#atmosphere .row .col {
+        padding: 0;
+    }
+}
+
+section#atmosphere .thumbs-slider {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px 0;
+}
+
+section#atmosphere .thumbs-slider .atmo-prev, section#atmosphere .thumbs-slider .atmo-next {
+    margin: 0 10px;
+    font-size: clamp(25px, 2vw, 45px);
+    line-height: clamp(25px, 2vw, 45px);
+    height: clamp(25px, 2vw, 45px);
+    display: block;
+}
+
+@media (max-width: 600px) {
+    section#atmosphere .thumbs-slider .atmo-prev, section#atmosphere .thumbs-slider .atmo-next {
+        display: none;
+    }
+}
+
+section#atmosphere #atmosphere-slider .swiper-wrapper {
+    padding: 8px 0;
+}
+
+section#atmosphere #atmosphere-slider .swiper-slide {
+    height: unset;
+}
+
+section#atmosphere #atmosphere-slider .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: box-shadow .2s;
+    cursor: pointer;
+    opacity: .7;
+    transition: opacity .2s;
+}
+
+section#atmosphere #atmosphere-slider .swiper-slide img:hover {
+    opacity: 1;
+}
+
+section#atmosphere #atmosphere-slider .swiper-slide-active img {
+    opacity: 1;
+}
+
+@media (min-width: 600px) {
+    section#atmosphere #atmosphere-slider .swiper-slide-active img {
+        box-shadow: 0 0 0 4px #fff, 0 0 0 8px #7A91CB;
+    }
 }
 
 section#contacts {

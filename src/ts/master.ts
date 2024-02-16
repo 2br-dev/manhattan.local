@@ -3,12 +3,12 @@ import * as M from 'materialize-css';
 import Zoomer from './lib/zoomer';
 import Lazy from 'vanilla-lazyload';
 import Swiper from 'swiper';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import TinyParallax from './lib/tinyparallax';
 
 let prevent = false;
 
-Swiper.use([Autoplay, Pagination]);
+Swiper.use([Autoplay, Pagination, Navigation]);
 
 declare var ol:any;
 let map:any;
@@ -36,6 +36,45 @@ let zoom = 17;
 			}, 400);
 		},
 	});
+
+	let atmosphereDesktop, atmosphereMobile;
+
+	if(document.querySelectorAll('#atmosphere-slider').length){
+		atmosphereDesktop = new Swiper('#atmosphere-slider', {
+			spaceBetween: 20,
+			centeredSlides: true,
+			slideToClickedSlide: true,
+			navigation: {
+				nextEl: '.atmo-next',
+				prevEl: '.atmo-prev'
+			},
+			breakpoints: {
+				400: {
+					slidesPerView: 1
+				},
+				600: {
+					slidesPerView: 2
+				},
+				900: {
+					slidesPerView: 3
+				},
+				1200: {
+					slidesPerView: 4
+				},
+				1800: {
+					slidesPerView: 5
+				}
+			},
+			on: {
+				slideChangeTransitionEnd: (e:Swiper) => {
+					lazy.update();
+					let source = e.slides[e.activeIndex].querySelector('img').src;
+					let globalContainer = <HTMLElement>document.querySelector('#atmosphere');
+					globalContainer.style.backgroundImage = `url(${source})`;
+				}
+			}
+		})
+	}
 
 	updateHeader();
 

@@ -1,5 +1,28 @@
 body{
 
+	position: relative;
+
+	$lines-color: #efefef;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 25vw;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-100%);
+		border-left: 1px solid $lines-color;
+		z-index: -1;
+	}
+
+	&:after{
+		@extend:before;
+		transform: none;
+		border-right: 1px solid $lines-color;
+	}
+
 	& img{
 		background-color: #efefef;
 		display: block;
